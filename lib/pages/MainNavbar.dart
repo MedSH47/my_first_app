@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'HomeScreen.dart'; // Ensure this import is correct
+import 'HomeScreen.dart'; 
 import 'CarForm.dart';
 import 'CarListScreen.dart';
 
@@ -12,7 +12,7 @@ class _MainNavbarState extends State<MainNavbar> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    HomeScreen(), // HomeScreen is now a simple widget
+    HomeScreen(), 
     CarForm(),
     CarListScreen(),
   ];

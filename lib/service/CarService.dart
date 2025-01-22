@@ -34,5 +34,25 @@ class CarService {
     throw Exception('Failed to load cars: ${response.body}');
   }
 }
+static Future<Car> updateCar(String? id, Car car) async {
+    final response = await http.put(
+      Uri.parse('$apiUrl/Modify/$id'),
+      headers: {'Content-Type': 'application/json'},
+      body: json.encode(car.toJson()),
+    );
+
+    if (response.statusCode == 200) {
+      return Car.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to update car');
+    }
+  }
+  static Future<void> deleteCar(String id) async {
+    final response = await http.delete(Uri.parse('$apiUrl/Delete/$id'));
+
+    if (response.statusCode != 200) {
+      throw Exception('Failed to delete car');
+    }
+  }
 
 }

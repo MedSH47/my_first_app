@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _loadUserData();
   }
 
-  // Load user data from shared preferences (assuming you saved user name there after login)
+  
   _loadUserData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -25,13 +25,13 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  // Logout function: Remove user data and navigate to login screen
+ 
   _logout() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.remove('username');  // Clear saved username
+    await prefs.remove('username');  
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => HomeScreen()),  // Navigate to LoginScreen
+      MaterialPageRoute(builder: (context) => HomeScreen()),  
     );
   }
 
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
             _username != null
                 ? ListTile(
                     title: Text('Logout'),
-                    onTap: _logout,  // Call logout function when tapped
+                    onTap: _logout,  
                   )
                 : ListTile(
                     title: Text('Login'),

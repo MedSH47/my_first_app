@@ -63,8 +63,7 @@ class _CarFormState extends State<CarForm> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Car created successfully!')),
         );
-        Navigator.pop(context);
-      } catch (e) {
+        Navigator.pushReplacementNamed(context, '/navbar');      } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Failed to create car: $e')),
         );
